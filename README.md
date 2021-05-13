@@ -1,2 +1,2 @@
-# ftwitter
+# instagram
 firebase + react
