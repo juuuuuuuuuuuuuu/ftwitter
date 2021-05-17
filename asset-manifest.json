@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ftwitter/static/css/main.a8171ec8.chunk.css",
-    "main.js": "/ftwitter/static/js/main.715b635d.chunk.js",
-    "main.js.map": "/ftwitter/static/js/main.715b635d.chunk.js.map",
+    "main.css": "/ftwitter/static/css/main.4d417615.chunk.css",
+    "main.js": "/ftwitter/static/js/main.38689d94.chunk.js",
+    "main.js.map": "/ftwitter/static/js/main.38689d94.chunk.js.map",
     "runtime-main.js": "/ftwitter/static/js/runtime-main.4ea25c65.js",
     "runtime-main.js.map": "/ftwitter/static/js/runtime-main.4ea25c65.js.map",
     "static/js/2.59ce0058.chunk.js": "/ftwitter/static/js/2.59ce0058.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.691b9a3d.chunk.js": "/ftwitter/static/js/3.691b9a3d.chunk.js",
     "static/js/3.691b9a3d.chunk.js.map": "/ftwitter/static/js/3.691b9a3d.chunk.js.map",
     "index.html": "/ftwitter/index.html",
-    "static/css/main.a8171ec8.chunk.css.map": "/ftwitter/static/css/main.a8171ec8.chunk.css.map",
+    "static/css/main.4d417615.chunk.css.map": "/ftwitter/static/css/main.4d417615.chunk.css.map",
     "static/js/2.59ce0058.chunk.js.LICENSE.txt": "/ftwitter/static/js/2.59ce0058.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4ea25c65.js",
     "static/js/2.59ce0058.chunk.js",
-    "static/css/main.a8171ec8.chunk.css",
-    "static/js/main.715b635d.chunk.js"
+    "static/css/main.4d417615.chunk.css",
+    "static/js/main.38689d94.chunk.js"
   ]
 }
