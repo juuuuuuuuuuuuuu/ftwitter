@@ -1,2 +1,3 @@
 # instagram
-firebase + react
+https://juuuuuuuuuuuuuu.github.io/instagram/#/
+
