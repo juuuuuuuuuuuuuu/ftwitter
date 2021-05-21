@@ -1,6 +1,7 @@
 import Logo from 'components/Logo';
 import { authService, firebaseInstance } from 'fbase';
 import { useState } from 'react';
+import 'css/Auth.css';
 
 function Auth() {
   const [email, setEmail] = useState('');

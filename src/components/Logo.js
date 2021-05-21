@@ -1,8 +1,8 @@
-function Logo() {
+function Logo({ width= 203, height=56 }) {
   return (
     <svg
-      width="203"
-      height="56"
+      width={width}
+      height={height}
       viewBox="0 0 203 56"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
