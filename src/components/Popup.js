@@ -1,6 +1,5 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useTransition, animated } from 'react-spring';
-import { useState } from 'react/cjs/react.development';
 
 function Popup(props) {
   const { isOpen, onClose, onAdd } = props;
