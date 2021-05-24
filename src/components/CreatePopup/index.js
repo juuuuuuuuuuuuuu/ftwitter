@@ -1,7 +1,10 @@
 import { useRef, useState } from 'react';
 import { useTransition, animated } from 'react-spring';
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from '@emotion/react';
+import { styles } from './style';
 
-function Popup(props) {
+function CreatePopup(props) {
   const { isOpen, onClose, onAdd } = props;
 
   const textRef = useRef(null);
@@ -49,7 +52,6 @@ function Popup(props) {
         } = e;
 
         imgRef.current.src = result;
-
       };
       readerBase64.readAsDataURL(files[0]);
     };
@@ -60,28 +62,32 @@ function Popup(props) {
   return transitions((props, item) => {
     return (
       item && (
-        <animated.div className="popup" style={props}>
-          <div className="popup_title">
+        <animated.div css={styles.popup} style={props}>
+          <div css={styles.title}>
             <span onClick={() => onClickButton('cancel')}>
-              <i className="fas fa-times"></i>
+              <i css={styles.title_icon} className="fas fa-times"></i>
             </span>
-            <span className="title">게시물</span>
-            <span className="posting" onClick={() => onClickButton('post')}>
+            <span css={styles.titleText}>게시물</span>
+            <span css={styles.posting} onClick={() => onClickButton('post')}>
               게시
             </span>
           </div>
-          <div className="popup_content">
-            <div className="inputForm">
-              <textarea ref={textRef} placeholder="입력해주세요" />
-
-              <div className="picture">
-                <img ref={imgRef} />
+          <div css={styles.content}>
+            <div css={styles.inputForm}>
+              <textarea
+                css={styles.textarea}
+                ref={textRef}
+                placeholder="입력해주세요"
+              />
+              <div css={styles.picture}>
+                <img ref={imgRef} css={styles.img} alt="" />
               </div>
             </div>
-
-            <div className="gallery" onClick={onClickGallery}>
+            <div css={styles.gallery} onClick={onClickGallery}>
               <span>사진</span>
-              <span><i className="fas fa-chevron-right"></i></span>
+              <span>
+                <i className="fas fa-chevron-right"></i>
+              </span>
             </div>
           </div>
         </animated.div>
@@ -89,4 +95,4 @@ function Popup(props) {
     );
   });
 }
-export default Popup;
+export default CreatePopup;
