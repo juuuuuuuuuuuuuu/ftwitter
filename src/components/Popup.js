@@ -21,6 +21,7 @@ function Popup(props) {
         buffer,
       });
 
+    setBuffer(null);
     onClose();
   };
 
@@ -30,6 +31,8 @@ function Popup(props) {
     upload.onchange = (e) => {
       const { files } = e.currentTarget;
       const reader = new FileReader();
+      const readerBase64 = new FileReader();
+
       reader.onload = async (e) => {
         const {
           currentTarget: { result },
@@ -39,6 +42,16 @@ function Popup(props) {
         setBuffer(result);
       };
       reader.readAsArrayBuffer(files[0]);
+
+      readerBase64.onload = async (e) => {
+        const {
+          currentTarget: { result },
+        } = e;
+
+        imgRef.current.src = result;
+
+      };
+      readerBase64.readAsDataURL(files[0]);
     };
 
     upload.click();
@@ -59,7 +72,7 @@ function Popup(props) {
           </div>
           <div className="popup_content">
             <div className="inputForm">
-              <textarea ref={textRef} />
+              <textarea ref={textRef} placeholder="입력해주세요" />
 
               <div className="picture">
                 <img ref={imgRef} />
@@ -67,7 +80,8 @@ function Popup(props) {
             </div>
 
             <div className="gallery" onClick={onClickGallery}>
-              사진
+              <span>사진</span>
+              <span><i className="fas fa-chevron-right"></i></span>
             </div>
           </div>
         </animated.div>
