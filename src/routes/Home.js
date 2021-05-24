@@ -55,28 +55,6 @@ function Home({ user }) {
     });
   }, []);
 
-  const onFile = (e) => {
-    const { files } = e.currentTarget;
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      const {
-        currentTarget: { result },
-      } = e;
-
-      setAttachment(result);
-      onSubmit(result);
-    };
-
-    reader.readAsArrayBuffer(files[0]);
-  };
-
-  const onSubmit = async (result) => {
-    const attachmentRef = storageService.ref().child(`${user.uid}/${uuidv4()}`);
-    const response = await attachmentRef.put(result);
-    const d = await response.ref.getDownloadURL();
-    console.log(d);
-  };
-
   const getImageUrl = async (result) => {
     const attachmentRef = storageService.ref().child(`${user.uid}/${uuidv4()}`);
     const response = await attachmentRef.put(result);
@@ -98,9 +76,6 @@ function Home({ user }) {
           <img className="profile" src={photoUrl} onClick={onSingOut} />
         </div>
       </header>
-      <form onSubmit={onSubmit} value="보내기">
-        <input type="file" id="avatar" name="avatar" onChange={onFile}></input>
-      </form>
 
       {/* 레이어팝업 - 게시물 팝업 */}
       {<Popup onClose={onClickPopup} onAdd={onAddStorage} isOpen={isOpen} />}
