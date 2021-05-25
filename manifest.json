@@ -1,0 +1,17 @@
+{
+  "short_name": "Instagram_joo",
+  "name": "instaram playground",
+  "icons": [
+    {
+      "src": "/public/favicon.jpeg",
+      "type": "image/jpeg",
+      "sizes": "255"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#ffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffff",
+  "description": "Instagram_joo"
+}

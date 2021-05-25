@@ -33,9 +33,9 @@ function Form() {
   return (
     <>
       {/* 로그인창 */}
-      <div css={styles.loginFormStyle}>
+      <div css={styles.loginForm}>
         <input
-          css={styles.inputStyle}
+          css={styles.input}
           type="text"
           name="email"
           placeholder="아이디를 입력하세요"
@@ -43,7 +43,7 @@ function Form() {
           onChange={onChangeInput}
         />
         <input
-          css={styles.inputStyle}
+          css={styles.input}
           type="password"
           name="password"
           placeholder="비밀번호를 입력하세요"
@@ -51,12 +51,12 @@ function Form() {
           onChange={onChangeInput}
         />
       </div>
-      <button css={styles.loginStyle} onClick={onDoLogin}>
+      <button css={styles.login} onClick={onDoLogin}>
         로그인
       </button>
-      <div css={styles.createStyle}>
+      <div css={styles.create}>
         <span>계정이 없으신가요?</span>
-        <button css={styles.createButtonStyle} onClick={onCreateAccount}>
+        <button css={styles.createButton} onClick={onCreateAccount}>
           가입하기
         </button>
       </div>

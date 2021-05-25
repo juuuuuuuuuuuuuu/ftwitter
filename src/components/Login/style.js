@@ -51,6 +51,11 @@ export const styles = {
   `,
   login: css`
     margin-top: 50px;
+    background-color: ${theme.color.blue};
+    color: ${theme.color.white};
+    padding: 6px;
+    border-radius: 3px;
+    font-size: ${theme.font.medium};
   `,
   create: css`
     margin-top: 20px;
