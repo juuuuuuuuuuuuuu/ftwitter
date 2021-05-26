@@ -34,4 +34,12 @@ export const styles = {
     border-radius: 100%;
     margin: 10px 10px;
   `,
+  like: css`
+    color: red;
+  `,
+  likecnt: css`
+    margin: 5px;
+    font-weight: 600;
+    font-size: 15px;
+  `,
 };

@@ -29,6 +29,7 @@ function Home({ user }) {
         id: 'juu0124',
         userImgUrl: photoUrl,
         createdAt: Date.now(),
+        likeList: [],
       });
     } catch (e) {
       console.log(e.message);
@@ -38,9 +39,10 @@ function Home({ user }) {
   useEffect(() => {
     dbService.collection('instagram').onSnapshot((snapshot) => {
       const nweetArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
+        docId: doc.id,
         ...doc.data(),
       }));
+
       setList(nweetArray);
     });
   }, []);
