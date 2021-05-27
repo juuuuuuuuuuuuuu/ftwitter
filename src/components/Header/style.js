@@ -11,6 +11,7 @@ export const styles = {
     left: 0;
     background-color: ${theme.color.white};
     box-shadow: 0 0.5px currentColor;
+    font-size: 19px;
   `,
   svg: css`
     margin-top: 14px;
@@ -50,5 +51,9 @@ export const styles = {
     height: 35px;
     border-radius: 100%;
     margin: 10px 10px;
+  `,
+  title: css`
+    margin-left: -20px;
+    margin-top: 10px;
   `,
 };

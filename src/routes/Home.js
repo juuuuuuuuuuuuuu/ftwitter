@@ -5,11 +5,14 @@ import { v4 as uuidv4 } from 'uuid';
 import CreatePopup from 'components/CreatePopup';
 import List from 'components/List';
 import Header from 'components/Header';
+import Logo from 'components/Logo';
 
 /** @jsxImportSource @emotion/react */
 import { css, jsx } from '@emotion/react';
 
-const cardStyle = css`margin-top: 60px`;
+const cardStyle = css`
+  margin-top: 60px;
+`;
 
 function Home({ user }) {
   const [list, setList] = useState([]);
@@ -59,13 +62,50 @@ function Home({ user }) {
     setOpen((open) => !open);
   };
 
+  const onSingOut = () => {
+    // eslint-disable-next-line no-restricted-globals
+    const result = confirm('로그아웃 하시겠습니까?');
+
+    if (!result) {
+      return;
+    }
+
+    authService.signOut();
+    window.location.reload();
+  };
+
   return (
     <>
       {/* 헤더 */}
-      <Header onOpen={onClickPopup} />
+      <Header
+        leftIcon={
+          <Logo width={150} height={30} style={{ marginTop: '14px' }} />
+        }
+        rightIcon={
+          <>
+            <i
+              className="fas fa-plus"
+              css={styles.rightPlus}
+              onClick={onClickPopup}
+            ></i>
+            <img
+              css={styles.profile}
+              src={photoUrl}
+              onClick={onSingOut}
+              alt=""
+            />
+          </>
+        }
+      />
 
       {/* 레이어팝업 - 게시물 팝업 */}
-      {<CreatePopup onClose={onClickPopup} onAdd={onAddStorage} isOpen={isOpen} />}
+      {
+        <CreatePopup
+          onClose={onClickPopup}
+          onAdd={onAddStorage}
+          isOpen={isOpen}
+        />
+      }
 
       {/* 인스타그램 피드 */}
       <section css={cardStyle}>
@@ -75,3 +115,15 @@ function Home({ user }) {
   );
 }
 export default Home;
+
+const styles = {
+  rightPlus: css`
+    font-size: 35px;
+  `,
+  profile: css`
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    margin: 10px 10px;
+  `,
+};
